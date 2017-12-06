@@ -15,7 +15,7 @@ public class Movement : MonoBehaviour
     {
         Screen.orientation = ScreenOrientation.LandscapeLeft;
         gyroEnabled = EnableGyro();
-        Debug.Log(gyroEnabled);
+       // Debug.Log(gyroEnabled);
     }
 
     private bool EnableGyro()
@@ -34,13 +34,14 @@ public class Movement : MonoBehaviour
     {
         if(gyroEnabled)
         {
-            Debug.Log(gyro.rotationRate.y);
+            //Debug.Log(gyro.rotationRate.y);
             if(gyro.rotationRate.y > 0)
-                GetComponent<Rigidbody>().AddForce(Vector3.right * 20);
+                GetComponent<Rigidbody>().AddForce(Vector3.right * 5);
             else
-                GetComponent<Rigidbody>().AddForce(Vector3.left * 20);
+                GetComponent<Rigidbody>().AddForce(Vector3.left * 5);
 
             GetComponent<Rigidbody>().AddForce(Vector3.forward * 10);
         }
+        //GetComponent<Rigidbody>().AddForce(Vector3.forward * 10);
     }
 }
