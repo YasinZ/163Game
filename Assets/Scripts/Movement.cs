@@ -34,13 +34,17 @@ public class Movement : MonoBehaviour
     {
         if(gyroEnabled)
         {
+            Debug.Log(gyro.attitude);
+            //Debug.Log(-1 * Vector3.right);
             //Debug.Log(gyro.rotationRate.y);
-            if(gyro.rotationRate.y > 0)
-                GetComponent<Rigidbody>().AddForce(Vector3.right * 5);
-            else
-                GetComponent<Rigidbody>().AddForce(Vector3.left * 5);
+            if(gyro.attitude.y < -.1f)
+                GetComponent<Rigidbody>().AddForce(Vector3.right * 20);
+            else if((gyro.attitude.y > .1f))
+                GetComponent<Rigidbody>().AddForce(Vector3.left * 20);
 
-            GetComponent<Rigidbody>().AddForce(Vector3.forward * 10);
+            //GetComponent<Rigidbody>().AddForce(Vector3.forward * 5);
+            //GetComponent<Rigidbody>().MovePosition(Vector3.forward);
+            //transform.Translate(Vector3.forward);
         }
         //GetComponent<Rigidbody>().AddForce(Vector3.forward * 10);
     }
