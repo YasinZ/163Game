@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour {
     public int numGenerated = 1;
+    public int currentRamp = 0;
+    public int score = 0;
 
 	// Use this for initialization
 	void Start () {
@@ -18,4 +20,5 @@ public class GameManager : MonoBehaviour {
     {
         numGenerated++;
     }
-}
+    }
+
